@@ -1,2 +1,11 @@
 This is a Git super project, it is used to build a complete Avogadro package
 along with the OpenBabel library, plugins and data files.
+
+Once you have cloned this repository, you need to run the following commands to
+actually get a full checkout:
+
+git submodule init
+git submodule update
+
+This will give you a working project. For more information check out the 
+tutorial at http://git.or.cz/gitwiki/GitSubmoduleTutorial
