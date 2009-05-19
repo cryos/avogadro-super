@@ -1,0 +1,6 @@
+[submodule "openbabel"]
+	path = openbabel
+	url = git://github.com/ghutchis/openbabel.git
+[submodule "avogadro"]
+	path = avogadro
+	url = git://github.com/cryos/avogadro.git
