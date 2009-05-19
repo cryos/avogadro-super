@@ -17,7 +17,7 @@ if(UNIX AND ENABLE_RPATH)
   if(APPLE)
     # Funky path logic in order to get the Avogadro application bundle working
     set(CMAKE_BUNDLE_LOCATION "/Applications")
-    set(CMAKE_BUNDLE_NAME "Avogadro${Avogadro_VERSION}")
+    set(CMAKE_BUNDLE_NAME "Avogadro")
     set(CMAKE_INSTALL_PREFIX "/Applications/${CMAKE_BUNDLE_NAME}.app/Contents")
     set(CMAKE_INSTALL_NAME_DIR "@executable_path/../lib")
   endif(APPLE)
