@@ -25,6 +25,8 @@ endif(UNIX AND ENABLE_RPATH)
 
 # Enable embedded OpenBabel so that Avogadro builds against the compiled lib
 set(EMBED_OPENBABEL ON CACHE TYPE BOOL)
+# Enable the Avogadro package
+set(ENABLE_AVO_PACKAGE ON CACHE TYPE BOOL)
 
 # If on Apple define the MAC_BUNDLE variable so that OpenBabel env variables
 # can be injected into the running process
