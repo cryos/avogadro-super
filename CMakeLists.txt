@@ -25,6 +25,8 @@ endif(UNIX AND ENABLE_RPATH)
 
 # Enable embedded OpenBabel so that Avogadro builds against the compiled lib
 set(EMBED_OPENBABEL ON CACHE TYPE BOOL)
+# Disable versioned format files - format plugins will be easier to locate
+set(ENABLE_VERSIONED_FORMATS OFF CACHE TYPE BOOL)
 # Enable the Avogadro package
 set(ENABLE_AVO_PACKAGE ON CACHE TYPE BOOL)
 
