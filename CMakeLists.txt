@@ -30,12 +30,30 @@ set(ENABLE_VERSIONED_FORMATS OFF CACHE TYPE BOOL)
 # Enable the Avogadro package
 set(ENABLE_AVO_PACKAGE ON CACHE TYPE BOOL)
 
-# If on Apple define the MAC_BUNDLE variable so that OpenBabel env variables
-# can be injected into the running process
-if(APPLE)
-  add_definitions(-DAVO_APP_BUNDLE)
-endif(APPLE)
+# Make an application bundle
+add_definitions(-DAVO_APP_BUNDLE)
+
+# If on Windows then point to the built in DLLs for now (this should be fixed)
+if(MSVC)
+#  set(LIBXML2_LIBRARIES "${openbabel_SOURCE_DIR}/windows-vc2005/libxml2.lib")
+#  set(LIBXML2_INCLUDE_DIR "${openbabel_SOURCE_DIR}/include")
+  set(ZLIB_LIBRARY "${openbabel_SOURCE_DIR}/windows-vc2005/zlib1.lib")
+  set(ZLIB_INCLUDE_DIR "${openbabel_SOURCE_DIR}/include")
+  # Set the plugin directory to the binary directory
+  set(OB_PLUGIN_INSTALL_DIR "bin" CACHE PATH "Install dir for plugins" FORCE)
+  # Point to the zlib and libxml2 dlls - we should build these
+  set(zlib_DIR "${openbabel_SOURCE_DIR}/windows-vc2005")
+#  set(libxml2_DIR "${zlib_DIR}")
+  set(openbabel_BINDIR "${openbabel_BINARY_DIR}/src")
+endif(MSVC)
 
 add_subdirectory(openbabel)
+
+# Set openbabel up for Avogadro now
+set(OPENBABEL2_INCLUDE_DIR
+  ${openbabel_SOURCE_DIR}/include
+  ${openbabel_BINARY_DIR}/include)
+set(OPENBABEL2_LIBRARIES ${openbabel_BINARY_DIR}/src/openbabel-2.lib)
+
 add_subdirectory(avogadro)
 
