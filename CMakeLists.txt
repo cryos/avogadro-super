@@ -53,7 +53,8 @@ add_subdirectory(openbabel)
 set(OPENBABEL2_INCLUDE_DIR
   ${openbabel_SOURCE_DIR}/include
   ${openbabel_BINARY_DIR}/include)
-set(OPENBABEL2_LIBRARIES ${openbabel_BINARY_DIR}/src/openbabel-2.lib)
+set(OPENBABEL2_LIBRARIES openbabel)
+set(OPENBABEL2_VERSION_MET TRUE)
 
 add_subdirectory(avogadro)
 
