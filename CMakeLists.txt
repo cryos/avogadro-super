@@ -55,6 +55,7 @@ set(OPENBABEL2_INCLUDE_DIR
   ${openbabel_BINARY_DIR}/include)
 set(OPENBABEL2_LIBRARIES openbabel)
 set(OPENBABEL2_VERSION_MET TRUE)
+set(OPENBABEL2_VERSION "${BABEL_VERSION}")
 
 add_subdirectory(avogadro)
 
