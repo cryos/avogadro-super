@@ -57,5 +57,8 @@ set(OPENBABEL2_LIBRARIES openbabel)
 set(OPENBABEL2_VERSION_MET TRUE)
 set(OPENBABEL2_VERSION "${BABEL_VERSION}")
 
+# Disable versioned avogadro plugins for packages too
+set(ENABLE_VERSIONED_PLUGIN_DIR OFF CACHE BOOL "Versioned Avo plugin dir" FORCE)
+
 add_subdirectory(avogadro)
 
